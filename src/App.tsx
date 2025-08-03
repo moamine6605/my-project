@@ -44,14 +44,14 @@ type Todo = {
             <label htmlFor="todo">
                 Task:
             </label>
-            <input name="todo" type="text" id="todo"/>
+            <input name="todo" type="text" id="todo" autoComplete="off" required/>
             <button type="submit">add to do</button>
         </form>
         <div>
             {todoList.map((todo:Todo)=>{
             return (
-                <div>
-                    <div key={todo.id}>{todo.todo}</div>
+                <div key={todo.id}>
+                    <div>{todo.todo}</div>
                     <button onClick={()=>setTodoList((prevList:Todo[]):Todo[]=>{
                         return prevList.filter((item)=>item.id!==todo.id)
                     })}>remove item</button>
