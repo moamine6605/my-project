@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { nanoid } from 'nanoid'
-
+import Header from "./components/Header";
 
 
 function App() {
@@ -39,14 +39,7 @@ type Todo = {
 
   return (
     <>
-        <h1>To do list:</h1>
-        <form action='#' id="add">
-            <label htmlFor="todo">
-                Task:
-            </label>
-            <input name="todo" type="text" id="todo" autoComplete="off" required/>
-            <button type="submit">add to do</button>
-        </form>
+        <Header />
         <div>
             {todoList.map((todo:Todo)=>{
             return (
