@@ -1,7 +1,18 @@
+import { FaBars, FaTimes } from 'react-icons/fa';
+
+
 function Header(){
+
+    const isOpen = true;
     return (
         <header>
-            <h1>Justdoit list</h1>
+            <div className='logo'>
+                <button className="hamburger-button">
+                    {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                </button>
+                <h1>Justdoit list</h1>
+            </div>
+
             <form action='#' id="add">
                 <label htmlFor="todo">
                     <input placeholder='e.g. finising chapter 2' name="todo" type="text" id="todo" autoComplete="off" required/>
