@@ -42,14 +42,18 @@ input{
 form > button{
     font-size: 28px;
     font-weight: 400;
-    color: white;
-    background-color: #FF6767;
+    color: wheat;
+    background-color: #a69595;
     border: none;
     border-radius: 12px;
     height: auto;
     cursor: pointer;
     margin-left: -28px;
     overflow: hidden;
+}
+
+form > button:active {
+    border: none;
 }
 
 form > button:hover {
@@ -59,4 +63,43 @@ form > button:hover {
 header > form, label{
     display: flex;
     width: 800px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    padding: 20px;
+    row-gap: 20px;
+}
+
+.container > p{
+    margin: 0;
+}
+
+.container-items{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+
+
+}
+
+.container-items > button{
+    background-color: rgb(192, 54, 54);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.container-items > button:hover{
+    opacity: 0.9;
 }
