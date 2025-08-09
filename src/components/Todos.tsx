@@ -41,7 +41,7 @@ type Todo = {
             return (
                 <div className="container-items" key={todo.id}>
                     <p>{new Date().toDateString()}</p>
-                    <p>{todo.todo}</p>
+                    <textarea disabled>{todo.todo}</textarea>
                     <button onClick={()=>setTodoList((prevList:Todo[]):Todo[]=>{
                         return prevList.filter((item)=>item.id!==todo.id)
                     })}><FaTrash /> Delete</button>

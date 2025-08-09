@@ -1,10 +1,11 @@
-
-
+import { useContext } from "react";
+import { isOpen } from "../App";
 
 function Sidebar(){
-       
+
+    const value:any = useContext(isOpen)       
     return(
-        <nav className={'open-nav'}>
+        <nav className={value.open}>
             <div className="utils">
                 <p>Dashboard</p>
                 <p>Vital Task</p>

@@ -1,14 +1,18 @@
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useContext } from "react";
+import { isOpen } from "../App";
 
 
 function Header(){
 
-    const isOpen = true;
+    const value:any = useContext(isOpen)       
+
+
     return (
         <header>
             <div className='logo'>
-                <button className="hamburger-button">
-                    {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                <button className="hamburger-button" onClick={value.toggle}>
+                    {value.open==='open-nav' ? <FaTimes size={24} /> : <FaBars size={24} />}
                 </button>
                 <h1>Justdoit list</h1>
             </div>

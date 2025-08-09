@@ -117,8 +117,19 @@ header > form, label{
     padding: 10px;
     background-color: whitesmoke;
     border-radius: 10px;
+}
 
+.container-items > textarea {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+    border: none;
+    resize: none;
+}
 
+.container-items > textarea:disabled{
+    color: inherit;
 }
 
 .container-items > button{
