@@ -6,10 +6,18 @@ export default function Todos() {
   type Todo = {
     id: string;
     todo: string;
+    date: string; // store as string for JSON
   };
 
-  const [todoList, setTodoList] = useState<Todo[]>([]);
+  const [todoList, setTodoList] = useState<Todo[]>(
+    JSON.parse(localStorage.getItem("todoList") || "[]")
+  );
   const [editingId, setEditingId] = useState<string | null>(null);
+
+  // Sync to localStorage whenever todoList changes
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
 
   // Add todo
   useEffect(() => {
@@ -24,7 +32,7 @@ export default function Todos() {
       if (todoItem) {
         setTodoList((prevList) => [
           ...prevList,
-          { id: nanoid(), todo: todoItem },
+          { id: nanoid(), todo: todoItem, date: new Date().toISOString() },
         ]);
       }
 
@@ -57,11 +65,13 @@ export default function Todos() {
     <div className="container">
       {todoList.map((todo) => (
         <div className="container-items" key={todo.id}>
-            <p>{new Date().toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-            })}</p>
+          <p>
+            {new Date(todo.date).toLocaleDateString("en-US", {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
 
           <form onSubmit={(e) => handleEditSubmit(e, todo.id)}>
             <textarea
