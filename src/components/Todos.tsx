@@ -57,7 +57,11 @@ export default function Todos() {
     <div className="container">
       {todoList.map((todo) => (
         <div className="container-items" key={todo.id}>
-          <p>{new Date().toDateString()}</p>
+            <p>{new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+            })}</p>
 
           <form onSubmit={(e) => handleEditSubmit(e, todo.id)}>
             <textarea
