@@ -119,7 +119,7 @@ header > form, label{
     border-radius: 10px;
 }
 
-.container-items > textarea {
+form > textarea {
     font-size: 20px;
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
@@ -128,23 +128,47 @@ header > form, label{
     resize: none;
 }
 
-.container-items > textarea:disabled{
+form > textarea:disabled{
     color: inherit;
 }
 
-.container-items > button{
+.edit-buttons{
+    display: flex;
+    gap: 10px;
+
+}
+
+.edit-buttons > .Delete{
     background-color: rgb(192, 54, 54);
     color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    text-align: center;
     cursor: pointer;
 }
 
-.container-items > button:hover{
+.edit-buttons > .Edit{
+    background-color: rgb(21, 163, 54);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.edit-buttons > .submit{
+    background-color: rgb(4, 18, 7);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.edit-buttons > button:hover{
     opacity: 0.9;
 }
 
